@@ -1,0 +1,23 @@
+spring:
+  kafka:
+    read-topic:
+      name: read-topic
+    write-topic:
+      name: write-topic
+    consumer:
+      bootstrap-servers: localhost:39092
+      auto-offset-reset: earliest
+      group-id: id1
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:39092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        acks: 1
+        spring:
+          json:
+            add:
+              type:
+                headers: false
